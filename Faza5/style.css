@@ -1,0 +1,258 @@
+*{
+    margin:0;
+    padding: 0;
+    font-family: Century Gothic;
+}
+
+.centar{
+    background-image: url(images/pozadina.jpg);
+    background-color: rgba(47, 48, 58, 1);
+    padding: 5px;
+     height: 800px; 
+     background-repeat: no-repeat;
+     background-size: 100%;
+     background-position: 0px 0px;
+}
+
+@media screen and (min-width:905px){
+    .banner-tekst{
+        font-size: 250%;
+    }
+}
+
+@media screen and (max-width:904px){
+    .banner-tekst{
+        font-size: 100%;
+    }
+}
+#tabela-header-row-2 td{
+    text-align: left;
+    padding-left: 13px;
+}
+
+#tabela-header-row-2 a:hover{
+   opacity: 0.3;
+}
+
+.header{
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(47, 48, 58, 1);
+}
+
+.header-bg{
+    opacity: 0.3;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+}
+
+.header-content{
+    position: relative;
+  }
+  
+
+.banner{
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(47, 48, 58, 1);
+    background-position: 0px 0px;
+    height: 180px;
+}
+
+.banner-tekst {
+    color: #fff;
+    text-align: center;
+    position: center center;
+    padding-top: 2%;
+    letter-spacing: 10px;
+    line-height: 140%;
+}
+
+.banner-content{
+    position: relative;
+}
+
+.banner-bg{
+    opacity: 0.3;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+}
+
+ul{
+    float: left;
+    list-style-type: none;
+    size: 100%;
+}
+
+ul li{
+    display: inline-block;
+    padding-right: 30px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    border: 2px;
+    border-radius: 10px;
+    border-style: solid;
+    transition: 0.6s ease;  
+}
+
+.o_nama{
+    margin-left: 450px;
+}
+
+ul li a:hover{
+    background-color: #fff;
+    border-color: #fff;
+    color: #000;
+}
+
+.active {
+    background-color: #fff;
+    border-color: #fff;
+    color: #000;
+}
+
+.prijavi_se{
+    background-color: rgba(78, 148, 119, 1);
+    color:#fff;
+    border-color: rgba(78, 148, 119, 1);
+}
+
+
+.slide-sports{
+    background-color: rgba(246, 246, 255, 1);
+    height: 435px;
+    padding-bottom: 20px;
+    overflow-x:scroll;
+    overflow-y: hidden;
+}
+
+.slide-slike{
+    height: 400px;
+    width: auto;
+}
+
+.slide-sport-ul{
+    width: 2300px;
+    height: 192px;
+    margin: 0;
+    /* padding-bottom:20px ; */
+    padding-top: 20px;
+}
+
+.slide-sport-il{
+    float: left;
+    padding-left: 15px;
+}
+
+.slide-sports a:hover{
+    opacity: 0.6;
+}
+
+.banner-bg-novosti{
+    opacity: 0.3;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+}
+
+.novosti{
+    border: lightgray;
+    border-style: inset;
+    border-width: thin;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: whitesmoke;
+
+}
+
+.novosti-slika{
+    min-width: 100%;
+    max-height: 120px;
+     object-fit: cover;
+}
+
+v-r {
+    height: 100%;
+    width: 1px;
+    border-left: 1px solid gray;
+}
+
+br {
+    content: "";
+    display: block;
+    font-size: 0%;
+  }
+
+  /*=====================O NAMA================ */
+  
+  .tekst-o-nama{
+      margin-top: 5%;
+      padding: auto;
+      text-align: left;
+      font-size: 20px;
+  }
+
+  .o-nama{
+      margin-bottom: 200px;
+  }
+
+  /* ======================TENIS================= */
+
+  .sportski-objekti{
+    background-color: lightgray;
+    padding-top: 20px;
+  }
+  #tabela-sportskih-objekata{
+    background-color: rgba(78, 148, 119, 1);
+      height: 200px;
+      width: 100%;
+  }
+
+  #tabela-sportskih-objekata td{
+  
+    }
+
+    .sportski-objekti a{
+        text-decoration: none;
+        color: whitesmoke;
+    }
+
+  .sportski-objekti a:hover{
+    text-decoration: none;
+    color: rgba(47, 48, 58, 1);
+    opacity: 0.4;
+  }
+
+  .sportski-objekti a:hover img{
+    text-decoration: none;
+    opacity: 0.4;
+    
+  }
+
+  
+  .sportski-objekti td{
+      padding-left: 0.5%;
+      text-align: center;
+  }
+
+  .sportski-objekti-slika{
+    min-width: 500px;
+    max-height: 200px;
+    object-fit: cover;
+    padding-right: 0px;
+
+}
+
+
