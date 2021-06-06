@@ -15,9 +15,10 @@
                         <tr>
                             <th>#</th>
                             <th>Customer</th>
+                            <th>Category</th>
                             <th>Created Reservation</th>
-                            <th>Time Start</th>
                             <th>Appointment Date</th>
+                            <th>Time Start</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
@@ -27,6 +28,7 @@
                             <tr>
                                 <th>{{$item->id}}</th>
                                 <th>{{$item->customer->user->username}}</th>
+                                <th>{{$item->appointment->category->type}}</th>
                                 <th>{{$item->date_of_reservation}}</th>
                                 <th>{{$item->appointment->appointment_date}}</th>
                                 <th>{{$item->appointment->time_start}}</th>

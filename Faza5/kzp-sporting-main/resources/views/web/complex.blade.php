@@ -79,15 +79,16 @@
             @endforeach
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <hr>
-            <form method="POST" action="{{ route('add-rate') }}">
-                @csrf
-                <input type="hidden" readonly name="complex_id" value="{{ $complex->id }}">
-                <label>Sa koliko zvezdica biste ocenili kompleks?</label><br>
+    @if(auth()->guard('customer')->check())
+        <div class="row">
+            <div class="col-sm-12">
+                <hr>
+                <form method="POST" action="{{ route('add-rate') }}">
+                    @csrf
+                    <input type="hidden" readonly name="complex_id" value="{{ $complex->id }}">
+                    <label>Sa koliko zvezdica biste ocenili kompleks?</label><br>
 
-                <span class="star-rating">
+                    <span class="star-rating">
                   <input type="radio" name="rating" value="1"><i>1</i>
                   <input type="radio" name="rating" value="2"><i>2</i>
                   <input type="radio" name="rating" value="3"><i>3</i>
@@ -95,17 +96,18 @@
                   <input type="radio" name="rating" value="5"><i>5</i>
                 </span>
 
-                <div class="clear"></div>
-                <hr class="survey-hr">
-                <label for="comment">Dodatni komentar:</label><br/><br/>
-                <textarea cols="75" id="comment" name="comment" rows="5" style="width: 100%;"></textarea><br>
-                <br>
-                <div class="clear"></div>
-                <button
-                    style="width: 150px; background:rgba(78, 148, 119, 1);color:#fff;padding:12px;border:0; margin-bottom: 10px;"
-                    type="submit">Oceni
-                </button>
-            </form>
+                    <div class="clear"></div>
+                    <hr class="survey-hr">
+                    <label for="comment">Dodatni komentar:</label><br/><br/>
+                    <textarea cols="75" id="comment" name="comment" rows="5" style="width: 100%;"></textarea><br>
+                    <br>
+                    <div class="clear"></div>
+                    <button
+                        style="width: 150px; background:rgba(78, 148, 119, 1);color:#fff;padding:12px;border:0; margin-bottom: 10px;"
+                        type="submit">Oceni
+                    </button>
+                </form>
+            </div>
         </div>
-    </div>
+    @endif
 @endsection

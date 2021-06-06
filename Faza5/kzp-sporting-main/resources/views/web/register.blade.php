@@ -7,6 +7,7 @@
     <meta name="_token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('assets/front/css/register-style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Registracija</title>
 </head>
 <body style="background-image: url({{asset('assets/front/images/pozadina-registracija.jpg')}});">
@@ -20,7 +21,7 @@
 
     <div class="tab">Kontakt podaci
         <p><input placeholder="Unesite email" name="email" type="email"></p>
-        <p><input placeholder="Unesite broj telefona" name="contact" type="text"></p>
+        <p><input placeholder="Unesite broj telefona" name="contact" id="contact" type="text"></p>
     </div>
 
     <div class="tab">Datum rodjenja:
@@ -56,5 +57,14 @@
 
 </form>
 <script src="{{ asset('assets/front/js/register-script.js') }}"></script>
+<script>
+    $(document).ready(function () {
+        $("#contact").keypress(function (e) {
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                return false;
+            }
+        });
+    });
+</script>
 </body>
 </html>

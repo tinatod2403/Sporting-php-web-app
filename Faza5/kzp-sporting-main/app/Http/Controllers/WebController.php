@@ -138,6 +138,11 @@ class WebController extends Controller
         auth()->attempt(['username' => $request->username, 'password' => $request->password]);
         auth()->guard('customer')->loginUsingId(auth()->user()->customer->id);
         auth()->logout();
+        if (!auth()->guard('customer')->user()->is_active) {
+            auth()->guard('customer')->logout();
+
+            return back()->withErrors("Ne postoji korisnik sa tim podacima!");
+        }
 
         if (auth()->guard('customer')->check()) {
             return redirect()->route('home');
@@ -194,7 +199,13 @@ class WebController extends Controller
             $close = strtotime($request->get('date') . ' ' . $workingHour->close_hour);
             $lastTime = $open;
             for ($i = 0; $i < date('H', $close - $open); $i++) {
-                $appointment = Appointment::where('complex_id', $complex->id)->where('category_id', $category->id)->where('time_start', date('Y-m-d H:i:s', $lastTime))->first();
+                $appointment = Appointment::where('complex_id', $complex->id)
+                    ->where('category_id', $category->id)
+                    ->where('time_start', date('Y-m-d H:i:s', $lastTime))
+                    ->whereHas('reservation', function ($q) {
+                        $q->where('status', '<>', '1');
+                    })
+                    ->first();
                 if ($appointment) {
                     $appointments[] = "<li class='date checked disabled-li'>" . date('H:i', $lastTime) . '-' . date('H:i', $lastTime + 3600) . "</li>";
                 } else {
