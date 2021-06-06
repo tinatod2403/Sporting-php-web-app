@@ -1,0 +1,493 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+    /* font-size: 25px; */
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(47, 48, 58, 1);
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar {
+    position: relative;
+    width: 45rem;
+    height: 52rem;
+    background-color: rgba(47, 48, 58, 1);
+    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.month {
+    width: 100%;
+    height: 12rem;
+    background-color: rgba(78, 148, 119, 1);;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    text-align: center;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.month i {
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.month h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.month p {
+    font-size: 1.6rem;
+}
+
+.weekdays {
+    width: 100%;
+    height: 5rem;
+    padding: 0 0.4rem;
+    display: flex;
+    align-items: center;
+}
+
+.weekdays div {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    width: calc(44.2rem / 7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.days {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.2rem;
+}
+
+.days div {
+    font-size: 1.4rem;
+    margin: 0.3rem;
+    width: calc(40.2rem / 7);
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+    transition: background-color 0.2s;
+}
+
+.days div:hover:not(.today) {
+    background-color: rgba(47, 48, 58, 1);
+    border: 0.2rem solid #777;
+    cursor: pointer;
+}
+
+.prev-date,
+.next-date {
+    opacity: 0.5;
+}
+
+.today {
+    background-color: rgba(78, 148, 119, 1);
+}
+
+/* ======================================= */
+
+.container {
+    overflow: hidden;
+    position: relative;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+.slideshow {
+    list-style: none;
+    z-index: 1;
+}
+
+.slideshow li span {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    opacity: 0;
+    z-index: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-animation: imageAnimation 24s linear infinite 0s;
+    -moz-animation: imageAnimation 24s linear infinite 0s;
+    animation: imageAnimation 24s linear infinite 0s;
+}
+
+.slideshow li h3 {
+    position: absolute;
+    text-align: center;
+    z-index: 2;
+    bottom: 150px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    font-size: 4.0625em;
+    font-family: "Quicksand", sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    -webkit-animation: titleAnimation 24s linear 1 0s;
+    -moz-animation: titleAnimation 24s linear 1 0s;
+    animation: titleAnimation 24s linear 1 0s;
+}
+
+@media only screen and (min-width: 768px) {
+    .slideshow li h3 {
+        bottom: 30px;
+        font-size: 8.125em;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .slideshow li h3 {
+        font-size: 10.9375em;
+    }
+}
+
+.slideshow li:nth-child(1) span {
+    position: absolute;
+    background-image: url(slideshow/1.jpg);
+}
+
+.slideshow li:nth-child(2) span {
+    position: absolute;
+    background-image: url(slideshow/2.jpg);
+    -webkit-animation-delay: 6s;
+    -moz-animation-delay: 6s;
+    animation-delay: 6s;
+}
+
+.slideshow li:nth-child(3) span {
+    background-image: url(slideshow/6.jpg);
+    -webkit-animation-delay: 12s;
+    -moz-animation-delay: 12s;
+    animation-delay: 12s;
+}
+
+.slideshow li:nth-child(4) span {
+    background-image: url(slideshow/4.jpg);
+    -webkit-animation-delay: 18s;
+    -moz-animation-delay: 18s;
+    animation-delay: 18s;
+}
+
+.slideshow li:nth-child(4) span {
+    background-image: url(slideshow/8.jpg);
+    -webkit-animation-delay: 18s;
+    -moz-animation-delay: 18s;
+    animation-delay: 18s;
+}
+
+@-webkit-keyframes imageAnimation {
+    0% {
+        opacity: 0;
+        -webkit-animation-timing-function: ease-in;
+    }
+    12.5% {
+        opacity: 1;
+        -webkit-animation-timing-function: ease-out;
+    }
+    25% {
+        opacity: 1;
+    }
+    37.5% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes imageAnimation {
+    0% {
+        opacity: 0;
+        -moz-animation-timing-function: ease-in;
+    }
+    12.5% {
+        opacity: 1;
+        -moz-animation-timing-function: ease-out;
+    }
+    25% {
+        opacity: 1;
+    }
+    37.5% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes imageAnimation {
+    0% {
+        opacity: 0;
+        -webkit-animation-timing-function: ease-in;
+        -moz-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+    12.5% {
+        opacity: 1;
+        -webkit-animation-timing-function: ease-out;
+        -moz-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+    25% {
+        opacity: 1;
+    }
+    37.5% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes titleAnimation {
+    0% {
+        opacity: 0;
+    }
+    12.5% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 1;
+    }
+    37.5% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes titleAnimation {
+    0% {
+        opacity: 0;
+    }
+    12.5% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 1;
+    }
+    37.5% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes titleAnimation {
+    0% {
+        opacity: 0;
+    }
+    12.5% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 1;
+    }
+    37.5% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.no-cssanimations .slideshow li span {
+    opacity: 1;
+}
+
+/* ========== MODAL ========= */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*============== MODAL CONTENT ==================*/
+/* Include the padding and border in an element's total width and height */
+
+
+/* Remove margins and padding from the list */
+#myUL {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Style the list items */
+#myUL li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+#myUL li:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+/* Darker background-color on hover */
+#myUL li:hover {
+    background: #ddd;
+}
+
+/* When clicked on, add a background color and strike out text */
+#myUL li.checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+}
+
+/* Add a "checked" mark when clicked on */
+#myUL li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+
+/* Style the close button */
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Style the header */
+.header {
+    background-color: rgba(78, 148, 119, 1);
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+}
+
+/* Clear floats after the header */
+.header:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the input */
+input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+}
+
+/* Style the "Add" button */
+#btn-potvrdi {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    border-color: white;
+    color: rgba(78, 148, 119, 1);;
+}
+
+#btn-potvrdi:hover {
+    background-color: rgba(78, 148, 119, 1);;
+    border-color: white;
+    color: white;
+}

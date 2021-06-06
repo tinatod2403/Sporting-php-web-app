@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="calendar">
+        <div class="month">
+          <i class="fas fa-angle-left prev"></i>
+          <div class="date">
+            <h1></h1>
+            <p></p>
+          </div>
+          <i class="fas fa-angle-right next"></i>
+        </div>
+        <div class="weekdays">
+          <div>Ned</div>
+          <div>Pon</div>
+          <div>Ut</div>
+          <div>Sre</div>
+          <div>Cet</div>
+          <div>Pet</div>
+          <div>Sub</div>
+          
+        </div>
+        <div class="days"></div>
+      </div>
+
+      <ul class='slideshow'>
+        <li>
+          <h3></h3>
+          
+          <span>Summer</span>
+        </li>
+        <li>
+          
+          <span>Fall</span>
+        </li>
+        <li>
+          
+          <span>Winter</span>
+        </li>
+        <li>
+          
+          <span>Spring</span>
+        </li>
+      </ul>
+    </div>
+
+    
+
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+    
+        <div id="myDIV" class="header">
+          <p style="font-size:25px;">Zakažite termin:</p>
+          <br>
+          <button id="btn-potvrdi">
+            <b>POTVRDI</b></button>
+        </div>
+        
+        <ul id="myUL">
+          <li>10:00 - 10:55</li>
+          <li>11:00 - 11:55</li>
+          <li>12:00 - 12:55</li>
+          <li>13:00 - 13:55</li>
+          <li>14:00 - 14:55</li>
+          <li>15:00 - 15:55</li>
+          <li>16:00 - 16:55</li> 
+          <li>17:00 - 17:55</li> 
+          <li>18:00 - 18:55</li>
+          <li>19:00 - 19:55</li>
+          <li>20:00 - 20:55</li>
+        </ul>
+    
+    
+      </div>
+
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
