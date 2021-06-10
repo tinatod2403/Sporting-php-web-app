@@ -95,8 +95,6 @@
         <div id="myDIV" class="header">
             <p style="font-size:25px;">Zakažite termin:</p>
             <br>
-            <button id="btn-potvrdi">
-                <b>POTVRDI</b></button>
         </div>
         <ul id="myUL">
         </ul>
@@ -156,51 +154,58 @@
             year = year.getFullYear();
 
             dayName = new Date(year, month - 1, day);
-            dayName = dayName.getDay();
-            switch (dayName) {
-                case 0:
-                    dayName = 'Sunday';
-                    break;
-                case 1:
-                    dayName = 'Monday';
-                    break;
-                case 2:
-                    dayName = 'Tuesday';
-                    break;
-                case 3:
-                    dayName = 'Wednesday';
-                    break;
-                case 4:
-                    dayName = 'Thursday';
-                    break;
-                case 5:
-                    dayName = 'Friday';
-                    break;
-                case 6:
-                    dayName = 'Saturday';
-                    break;
-            }
-
-            $.ajax({
-                url: "{{ route('get-free-appointments') }}",
-                type: "GET",
-                data: {
-                    'date': `${day}.${month}.${year}.`,
-                    'day': `${dayName}`,
-                    'complex': "{{ $complex->name }}",
-                    'category': " {{ $category->type }}",
-                },
-                dataType: 'json',
-                success: function (data) {
-                    $("#myUL").html('');
-                    for (let i = 0; i < data.appointments.length; ++i) {
-                        $("#myUL").append(data.appointments[i]);
-                    }
-                },
-                error: function (data) {
-                    console.log("ERROR");
+            let today = new Date();
+            today = new Date(today.getFullYear(), today.getMonth(), today.getDate())
+            if (today <= dayName) {
+                dayName = dayName.getDay();
+                switch (dayName) {
+                    case 0:
+                        dayName = 'Sunday';
+                        break;
+                    case 1:
+                        dayName = 'Monday';
+                        break;
+                    case 2:
+                        dayName = 'Tuesday';
+                        break;
+                    case 3:
+                        dayName = 'Wednesday';
+                        break;
+                    case 4:
+                        dayName = 'Thursday';
+                        break;
+                    case 5:
+                        dayName = 'Friday';
+                        break;
+                    case 6:
+                        dayName = 'Saturday';
+                        break;
                 }
-            });
+
+                $.ajax({
+                    url: "{{ route('get-free-appointments') }}",
+                    type: "GET",
+                    data: {
+                        'date': `${day}.${month}.${year}.`,
+                        'day': `${dayName}`,
+                        'complex': "{{ $complex->name }}",
+                        'category': " {{ $category->type }}",
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                        $("#myUL").html('');
+                        for (let i = 0; i < data.appointments.length; ++i) {
+                            $("#myUL").append(data.appointments[i]);
+                        }
+                    },
+                    error: function (data) {
+                        console.log("ERROR");
+                    }
+                });
+            } else {
+                $("#myUL").html('');
+                alert("Ne mozete odabrati dan koji je prosao!")
+            }
         });
 
         $(document).on('click', '.date', function () {

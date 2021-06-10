@@ -1,32 +1,27 @@
 {
-  "_args": [
-    [
-      "flag-icon-css@3.5.0",
-      "C:\\wamp64\\www\\kzp-sporting"
-    ]
-  ],
-  "_from": "flag-icon-css@3.5.0",
+  "_from": "flag-icon-css@^3.4.6",
   "_id": "flag-icon-css@3.5.0",
   "_inBundle": false,
   "_integrity": "sha512-pgJnJLrtb0tcDgU1fzGaQXmR8h++nXvILJ+r5SmOXaaL/2pocunQo2a8TAXhjQnBpRLPtZ1KCz/TYpqeNuE2ew==",
   "_location": "/flag-icon-css",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "flag-icon-css@3.5.0",
+    "raw": "flag-icon-css@^3.4.6",
     "name": "flag-icon-css",
     "escapedName": "flag-icon-css",
-    "rawSpec": "3.5.0",
+    "rawSpec": "^3.4.6",
     "saveSpec": null,
-    "fetchSpec": "3.5.0"
+    "fetchSpec": "^3.4.6"
   },
   "_requiredBy": [
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/flag-icon-css/-/flag-icon-css-3.5.0.tgz",
-  "_spec": "3.5.0",
-  "_where": "C:\\wamp64\\www\\kzp-sporting",
+  "_shasum": "430747d5cb91e60babf85494de99173c16dc7cf2",
+  "_spec": "flag-icon-css@^3.4.6",
+  "_where": "/home/djordjevic/Desktop/Projects/kzp-sporting",
   "author": {
     "name": "Panayiotis Lipiridis",
     "email": "lipiridis@gmail.com"
@@ -34,6 +29,8 @@
   "bugs": {
     "url": "https://github.com/lipis/flag-icon-css/issues"
   },
+  "bundleDependencies": false,
+  "deprecated": false,
   "description": "> A collection of all country flags in SVG — plus the CSS for easier integration. > See the [demo](https://flagicons.lipis.dev).",
   "devDependencies": {
     "grunt": "1.1.0",

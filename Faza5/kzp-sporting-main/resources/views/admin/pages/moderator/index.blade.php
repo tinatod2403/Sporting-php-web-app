@@ -44,6 +44,7 @@
                                 <th>{{$item->contact}}</th>
                                 <th>{{$item->date_of_birth}}</th>
                                 <th>{{$item->date_register}}</th>
+{{--                                <th>{{optional($item->complex)->name}}</th>--}}
                                 <th>{{$item->complex->name}}</th>
                                 <td>
                                     <div class="dropdown">

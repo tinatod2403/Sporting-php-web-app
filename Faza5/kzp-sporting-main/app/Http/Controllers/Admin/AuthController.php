@@ -30,11 +30,13 @@ class AuthController extends Controller
     public function login(LoginRequest $request): RedirectResponse
     {
         auth()->attempt(['username' => $request->username, 'password' => $request->password]);
-        auth()->guard('admin')->loginUsingId(auth()->user()->admin->id);
-        auth()->logout();
+        if (auth()->user()) {
+            auth()->guard('admin')->loginUsingId(auth()->user()->admin->id);
+            auth()->logout();
 
-        if (auth()->guard('admin')->check()) {
-            return redirect()->route('admin.dashboard');
+            if (auth()->guard('admin')->check()) {
+                return redirect()->route('admin.dashboard');
+            }
         }
 
         return back()->withErrors("These credentials do not match our records.");

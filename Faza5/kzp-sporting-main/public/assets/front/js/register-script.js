@@ -13,24 +13,26 @@ function showTab(n) {
     }
     if (n == (x.length - 1)) {
         document.getElementById("nextBtn").innerHTML = "Registruj se";
+        document.getElementById("prevBtn").style.display = "none";
 
         var sub = document.getElementById("nextBtn");
         sub.onclick = function () {
-            // Get the snackbar DIV
-            var x = document.getElementById("snackbar");
+            if (validateForm()) {
+                // Get the snackbar DIV
+                var x = document.getElementById("snackbar");
 
-            // Add the "show" class to DIV
-            x.className = "show";
+                // Add the "show" class to DIV
+                x.className = "show";
 
-            // After 3 seconds, remove the show class from DIV
-            setTimeout(function () {
-                x.className = x.className.replace("show", "");
-                document.getElementById("regForm").submit();
-            }, 3000);
-
+                // After 3 seconds, remove the show class from DIV
+                setTimeout(function () {
+                    x.className = x.className.replace("show", "");
+                    document.getElementById("regForm").submit();
+                }, 3000);
+            }
         }
     } else {
-        document.getElementById("nextBtn").innerHTML = "Next";
+        document.getElementById("nextBtn").innerHTML = "Dalje";
     }
     // ... and run a function that displays the correct step indicator:
     fixStepIndicator(n)
@@ -48,7 +50,9 @@ function nextPrev(n) {
     // if you have reached the end of the form... :
     if (currentTab >= x.length) {
         //...the form gets submitted:
-        document.getElementById("regForm").submit();
+        if (validateForm()) {
+            document.getElementById("regForm").submit();
+        }
         return false;
     }
     // Otherwise, display the correct tab:

@@ -15,24 +15,24 @@
     @csrf
     <h1>Registracija</h1>
     <div class="tab">Ime i prezime
-        <p><input placeholder="Unesite ime" name="first_name" type="text"></p>
-        <p><input placeholder="Unesite prezime" name="last_name" type="text"></p>
+        <p><input required placeholder="Unesite ime" name="first_name" type="text"></p>
+        <p><input required placeholder="Unesite prezime" name="last_name" type="text"></p>
     </div>
 
     <div class="tab">Kontakt podaci
-        <p><input placeholder="Unesite email" name="email" type="email"></p>
-        <p><input placeholder="Unesite broj telefona" name="contact" id="contact" type="text"></p>
+        <p><input required placeholder="Unesite email" name="email" type="email"></p>
+        <p><input required placeholder="Unesite broj telefona" name="contact" id="contact" type="text"></p>
     </div>
 
     <div class="tab">Datum rodjenja:
-        <p><input placeholder="dan" name="day" type="number" min="1" max="31"></p>
-        <p><input placeholder="mesec" name="month" type="number" min="1" max="12"></p>
-        <p><input placeholder="godina" name="year" type="number" min="1900" max="2100"></p>
+        <p><input required placeholder="dan" name="day" type="number" min="1" max="31"></p>
+        <p><input required placeholder="mesec" name="month" type="number" min="1" max="12"></p>
+        <p><input required placeholder="godina" name="year" type="number" min="1900" max="2100"></p>
     </div>
 
     <div class="tab">Podaci za logovanje
-        <p><input placeholder="Unesite korisnicko ime" name="username" type="text"></p>
-        <p><input placeholder="Unesite lozinku" name="password" type="password"></p>
+        <p><input required placeholder="Unesite korisnicko ime" name="username" type="text"></p>
+        <p><input required placeholder="Unesite lozinku" name="password" type="password"></p>
     </div>
 
     <div style="overflow:auto;">

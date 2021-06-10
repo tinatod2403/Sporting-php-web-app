@@ -136,16 +136,18 @@ class WebController extends Controller
     public function login(LoginRequest $request): RedirectResponse
     {
         auth()->attempt(['username' => $request->username, 'password' => $request->password]);
-        auth()->guard('customer')->loginUsingId(auth()->user()->customer->id);
-        auth()->logout();
-        if (!auth()->guard('customer')->user()->is_active) {
-            auth()->guard('customer')->logout();
+        if (auth()->user()) {
+            auth()->guard('customer')->loginUsingId(auth()->user()->customer->id);
+            auth()->logout();
+            if (!auth()->guard('customer')->user()->is_active) {
+                auth()->guard('customer')->logout();
 
-            return back()->withErrors("Ne postoji korisnik sa tim podacima!");
-        }
+                return back()->withErrors("Ne postoji korisnik sa tim podacima!");
+            }
 
-        if (auth()->guard('customer')->check()) {
-            return redirect()->route('home');
+            if (auth()->guard('customer')->check()) {
+                return redirect()->route('home');
+            }
         }
 
         return back()->withErrors("Ne postoji korisnik sa tim podacima!");
