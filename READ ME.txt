@@ -21,7 +21,8 @@ HTML/CSS/JS:
 	   * npm run prod
 	   *php artisan serve
 
-Admin/secret
-Moderator/secret
-Customer/secret
+Username / Password / Link
+Admin    / secret   / LinkZaCustomer + Admin/login
+Moderator/ secret   / LinkZaCustomer + Moderator/login
+Customer / secret
 	
