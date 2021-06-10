@@ -1,2 +1,0 @@
-# Default
-PSI projekat 
