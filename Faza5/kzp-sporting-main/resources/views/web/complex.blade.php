@@ -29,11 +29,11 @@
         <div class="col-sm-12">
             @if(auth()->guard('customer')->check())
                 <a href="{{ route('calendar',['category'=>$category->type,'complex'=>$complex->name]) }}">
-                    <button class="button_zakazi"><span>ZAKAZI TERMIN </span></button>
+                    <button class="button_zakazi"><span>ZAKAŽI TERMIN </span></button>
                 </a>
             @else
                 <a href="#" onclick="document.getElementById('id01').style.display='block'">
-                    <button class="button_zakazi"><span>ZAKAZI TERMIN </span></button>
+                    <button class="button_zakazi"><span>ZAKAŽI TERMIN </span></button>
                 </a>
             @endif
         </div>

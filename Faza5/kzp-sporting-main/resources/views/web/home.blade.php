@@ -15,7 +15,7 @@
                 <img class="banner-bg" src="{{ asset('assets/front/images/header.jpg') }}">
             </div>
             <div class="banner-content">
-                <h6 class="banner-tekst">PRONAĐI NOVE LOKACIJE,<br> ZAKAŽITE VAŠ TEMIN!</h6>
+                <h6 class="banner-tekst">PRONAĐI NOVE LOKACIJE,<br> ZAKAŽITE VAŠ TERMIN!</h6>
             </div>
         </div>
     </div>
