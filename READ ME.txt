@@ -1,0 +1,36 @@
+Koriscene platforme za izradu projekta:
+PHP:
+	   Laravel
+okruzenje: Phpstorm
+	   Composer
+baza na:   myPhpAdmin u sklopu Wamp servera
+<<<<<<< HEAD
+	 
+
+HTML/CSS/JS:
+	 vsc
+	 Node.js
+=======
+	
+
+HTML/CSS/JS:
+	   vsc
+	   Node.js
+>>>>>>> 3393286dc2ed00e385b7abd195f6d19532adc8b0
+
+1. Pravi se baza u MyPhpAdmin-u
+2. Izmena env.example fajla
+3. Komande za pokretanje:
+	   * composer install
+	   * php artisan migrate --seed
+	   * php artisan storage:link
+	   * npm install 
+	   * npm audit fix
+	   * npm run prod
+	   *php artisan serve
+
+Username / Password / Link
+Admin    / secret   / LinkZaCustomer + Admin/login
+Moderator/ secret   / LinkZaCustomer + Moderator/login
+Customer / secret
+	
