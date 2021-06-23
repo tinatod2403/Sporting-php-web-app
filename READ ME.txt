@@ -4,10 +4,11 @@ PHP:
 okruzenje: Phpstorm
 	 Composer
 baza na:   myPhpAdmin u sklopu Wamp servera
-	 Node.js
+	 
 
 HTML/CSS/JS:
 	 vsc
+	 Node.js
 
 1. Pravi se baza u MyPhpAdmin-u
 2. Izmena env.example fajla

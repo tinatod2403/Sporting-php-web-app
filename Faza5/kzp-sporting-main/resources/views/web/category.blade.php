@@ -14,8 +14,8 @@
                             <tr>
                                 <td>
                                     <h2>{{ $complex->name }}</h2>
-                                    <p><i>Vjekoslava Kovača 11, 11000 Beograd
-                                            <br>RADNO VREME: ponedeljak-nedelja</i></p>
+                                    <p><i>
+                                            RADNO VREME: ponedeljak-nedelja</i></p>
                                 </td>
                                 <td rowspan="2" colspan="2">
                                     <img

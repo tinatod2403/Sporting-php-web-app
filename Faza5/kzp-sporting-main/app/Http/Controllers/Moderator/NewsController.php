@@ -26,7 +26,7 @@ class NewsController extends Controller
     public function index(Request $request)
     {
         return view('moderator.pages.news.index', [
-            'list' => News::paginate(10)
+            'list' => News::where('moderator_id',auth()->guard('moderator')->user()->id)->paginate(10)
         ]);
     }
 

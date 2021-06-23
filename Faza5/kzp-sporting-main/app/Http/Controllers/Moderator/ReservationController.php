@@ -20,7 +20,9 @@ class ReservationController extends Controller
     public function index(Request $request)
     {
         return view('moderator.pages.reservation.index', [
-            'list' => Reservation::paginate(10)
+            'list' => Reservation::whereHas('appointment', function ($q) {
+                $q->where('complex_id', auth()->guard('moderator')->user()->complex->id);
+            })->paginate(10)
         ]);
     }
 
